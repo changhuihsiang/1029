@@ -3,22 +3,7 @@
   //先從Session中取出user_type
   //以備後續確認瀏覽者的身份別
   $user_type = $_SESSION["user_type"];
-  $tick =$_GET["tick"];
-
-  if ($tick==1){
-      ?>
-    <script>alert('請登入會員');</script>
-  <?php
-    } elseif ($tick==2) {
-      ?>
-      <script>alert('請選擇種類');</script>
-  <?php
-    } elseif ($tick==3) {
-      ?>
-      <script>alert('請選擇張數');</script>
-  <?php
-    } 
-
+  
 ?>
 
 
@@ -56,7 +41,7 @@
 <div role="alert">
     <tr><td><h3><img src="pc/Sign4.png">購票中心</h3></td></tr>
   <hr>
-  <h5>請選擇欲購票種類及張數</h5>
+  <h5>確認訂單</h5>
 </div>
   <div class="alert alert-light" role="alert" style="width: 100%">
     <div class="alert alert-secondary" role="alert" style="width:80%;margin:0 auto;">
@@ -69,10 +54,10 @@
 
         <form method=POST action=cartticket.php>
           <tr align="center"><td>
-              <label style="font-size:20px;">購票種類</label>
+              <label style="font-size:20px;">結帳方式</label>
               <select  name="species" style="font-size:20px;">
-                <option value="">請選擇種類</option>
-                <option value="220">一般票</option>
+                <option value="">現金</option>
+                <option value="220">信用卡</option>
                 <option value="150">愛心票</option>
                 <option value="180">軍警票</option>
                 <option value="110">兒童票</option>

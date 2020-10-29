@@ -4,17 +4,18 @@
   //以備後續確認瀏覽者的身份別
   $userid = $_SESSION["user_type"];
 
-	$servername = "localhost";
-    $username = "root";
-    $password = "00000000";
-    $dbname = "gallery";
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+	// $servername = "localhost";
+ //    $username = "root";
+ //    $password = "00000000";
+ //    $dbname = "gallery";
+ //    // Create connection
+ //    $conn = new mysqli($servername, $username, $password, $dbname);
+ //    // Check connection
+ //    if ($conn->connect_error) {
+ //        die("Connection failed: " . $conn->connect_error);
+ //    }
 
+   require "includes/db.php";
     $sql = "SELECT * FROM carticket WHERE mid =$userid";
 
     $result = $conn->query($sql);
@@ -36,6 +37,7 @@ echo "<table class='table' bgcolor='#ffffff'>";
           $num = $row["num"]; 
           $species = $row["species"];
           $total=$num * $species;
+          $totall=$totall+$total;
           $n = $n + 1;
       
 			 echo "<tbody>";
@@ -57,9 +59,18 @@ echo "<table class='table' bgcolor='#ffffff'>";
 				echo "<td>$total</td>";
 				echo "<td><a href='deletecar.php?ctid=$ctid'> <button type='button' class='btn btn-outline-danger'>X</button></a></td>";
 				echo "</tr>";
+
 			echo "</tbody>";
  
         }
+
+        echo "<tr>";
+        echo "<th scope='row'>TOTAL:</th>";
+        echo "<td></td>";
+        echo "<td></td>";
+        echo "<td></td>";
+        echo "<td>"."$totall"."</td>";
+        echo "</tr>";
 echo " </table>";
     }
 
