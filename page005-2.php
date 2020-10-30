@@ -8,7 +8,9 @@
   //先從Session中取出user_type
   //以備後續確認瀏覽者的身份別
   $user_type = $_SESSION["user_type"];
-  
+  if($user_type==NULL){
+     header("Location: page005-1.php");
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -92,22 +94,30 @@ if ($user_type==NULL) {
 
 <div class="alert alert-light" role="alert" style="width: 100%">
   <div class="alert alert-secondary" role="alert" style="width:90%;margin:0 auto;">
-    <table align="center" width="90%">
-      <tr bgcolor="#ffffff">
-        <td><?php echo "<h5>你好，歡迎您的到來。</h5>"; ?></td>
-        <td></td>
-        <td>
-          <a href="page005-2-1.php"><button type="button" class="btn btn-outline-dark">資料修改</button></a>
-          <button type="button" class="btn btn-outline-dark">訂單查詢</button>
-          <button type="button" class="btn btn-outline-dark">創作作品</button>
-        </td>
-      </tr>
-      <tr>
-        <td>會員資料</td>
-        <td><?php require "memdata.php";?></td>
-        <td></td>
-      </tr>
-    </table>
+    <div class="alert alert-light" role="alert">
+            <h3>你好，歡迎您的到來。</h3>Hello and welcome your arrival.
+            <div align="right">
+              <a href="page005-2-1.php"><button type="button" class="btn btn-outline-dark">資料修改</button></a>
+              <a href="page005-2-2.php"><button type="button" class="btn btn-outline-dark">訂單查詢</button></a>
+              <a href="page005-2-3.php"><button type="button" class="btn btn-outline-dark">作品管理</button></a>
+            </div>
+            <div  role="alert" align="center">
+                <h4  class="alert-heading">會員資料</h4>
+                <table align="center" width="80%">
+                  <tr>
+                    <td>
+                      <hr style="width:80%;margin:0 auto;border: 0;height: 2px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))";>
+                      <br>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td><h5><?php require "memdata.php";?></h5></td>
+                  </tr>
+                </table>
+
+            </div>
+          </div>
+    
 </div>
 </div>
 

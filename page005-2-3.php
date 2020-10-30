@@ -9,7 +9,6 @@
   //以備後續確認瀏覽者的身份別
   $user_type = $_SESSION["user_type"];
   
-  
 ?>
 <!doctype html>
 <html lang="en">
@@ -86,20 +85,23 @@ if ($user_type==NULL) {
 <?php } else{  ?>
 
 <div class="alert alert-light" role="alert">
-    <tr><td><h3><img src="pc/Sign5.png">會員中心-資料修改</h3></td></tr>
+    <tr><td><h3><img src="pc/Sign5.png">會員中心</h3></td></tr>
     <hr>
     
   </div>
 
+
+div>
+
 <div class="alert alert-light" role="alert" style="width: 100%">
   <div class="alert alert-secondary" role="alert" style="width:90%;margin:0 auto;">
     <div class="alert alert-light" role="alert">
-            <h3>資料修改</h3>Data modification
+            <h3>管理作品</h3>checking order
             <div align="right">
                <a href="page005-2.php"><button type="button" class="btn btn-outline-dark">ＢＡＣＫ</button></a>
             </div>
             <div  role="alert" align="center">
-                <h4  class="alert-heading">會員資料</h4>
+                <h4  class="alert-heading">管理作品</h4>
                 <table align="center" width="80%">
                   <tr>
                     <td>

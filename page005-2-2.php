@@ -9,7 +9,6 @@
   //以備後續確認瀏覽者的身份別
   $user_type = $_SESSION["user_type"];
   
-  
 ?>
 <!doctype html>
 <html lang="en">
@@ -86,7 +85,7 @@ if ($user_type==NULL) {
 <?php } else{  ?>
 
 <div class="alert alert-light" role="alert">
-    <tr><td><h3><img src="pc/Sign5.png">會員中心-資料修改</h3></td></tr>
+    <tr><td><h3><img src="pc/Sign5.png">會員中心<small>-查詢訂單</small></h3></td></tr>
     <hr>
     
   </div>
@@ -94,24 +93,24 @@ if ($user_type==NULL) {
 <div class="alert alert-light" role="alert" style="width: 100%">
   <div class="alert alert-secondary" role="alert" style="width:90%;margin:0 auto;">
     <div class="alert alert-light" role="alert">
-            <h3>資料修改</h3>Data modification
+            <h3>查詢訂單</h3>checking order
             <div align="right">
                <a href="page005-2.php"><button type="button" class="btn btn-outline-dark">ＢＡＣＫ</button></a>
             </div>
             <div  role="alert" align="center">
-                <h4  class="alert-heading">會員資料</h4>
-                <table align="center" width="80%">
-                  <tr>
-                    <td>
-                      <hr style="width:80%;margin:0 auto;border: 0;height: 2px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))";>
-                      <br>
-                    </td>
-                  </tr>
-                  <tr align="center">
-                    <td><h5><?php require "memdatachange.php";?></h5></td>
-                  </tr>
-                </table>
+                <h4  class="alert-heading">選擇購票訂單OR預約訂單</h4>
 
+               <div class="row">
+                    <div class="col" style="background-color:#ffffffdb;height:200px;text-align:center;line-height:200px;">
+                    <a href="page005-2-2-1.php" style="color:#ffffff;"><button type="button" class="btn btn-info" style="font-size:40px;">購票訂單</button></a>
+                    
+                    </div>
+                    <div class="col" style="background-color:#ffffffdb;height:200px;text-align:center;line-height:200px;">
+
+                    
+                    <a href="page005-2-2-2.php" style="color:#ffffff;"><button type="button" class="btn btn-warning" style="font-size:40px;">預約訂單</button></a>
+                    </div>
+                  </div>
             </div>
           </div>
     

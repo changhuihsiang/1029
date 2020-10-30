@@ -38,59 +38,21 @@
     <br>
 
 <br>
-<div  class="alert alert-secondary" role="alert">
-    <tr><td><h3><img src="pc/Sign5.png">購票預約<small>-購票系統<small>-確認訂單</small></small></h3></td></tr>
+<div role="alert">
+    <tr><td><h3><img src="pc/Sign4.png">購票中心</h3></td></tr>
   <hr>
-  
-<!-- </div> -->
+  <h5>訂單完成</h5>
+</div>
   <div class="alert alert-light" role="alert" style="width: 100%">
-    <table align="center" width="50%">
-        <tr><td>
-          <img src="pc/ticket02.png" align="center" width="100%">
-       </td></tr>
-      </table>
-
-
-    <div class="alert alert-light" role="alert" style="width:80%;margin:0 auto;">
+    <div class="alert alert-secondary" role="alert" style="width:80%;margin:0 auto;">
       <div class="alert alert-light" role="alert">
-        <h5 style="text-align: center">訂單明細</h5>
-        <?php require "showcar.php";?>
+        <h5 style="text-align: center">訂單完成</h5>
         <hr>
-        <h5 style="text-align: center"><a href="ticket.php"><button type="button" class="btn btn-success">繼續選購</button></a></h5>
+        <h5 style="text-align: center"><a href="reservation.php"><button type="button" class="btn btn-success">繼續選購</button></a></h5>
+        <h5 style="text-align: center"><a href="page005-2-2-2.php"><button type="button" class="btn btn-success">查看訂單</button></a></h5>
       </div>
-
-      <table align="center" width="70%">
-        <form method=POST action=ticketorder.php>
-          <tr align="center"><td>
-              <label style="font-size:20px;">結帳方式</label>
-              <select  name="payment" style="font-size:20px;">
-                <option value="1">現場付款</option>
-                <option value="2">LINE Pay</option>
-                <option value="3">信用卡付款</option>
-                <option value="4">超商代碼付款</option>
-              </select>
-              <br>
-              <label style="font-size:20px;">取票方式</label>
-              <select  name="gettickets" style="font-size:20px;">
-                <option value="1">現場代碼取票</option>
-                <option value="2">超商代碼取票</option>
-                <option value="3">手機電子票</option>
-              </select>
-              <hr>
-              <P align="center"><button type="submit" class="btn btn-dark" >送出訂單</button></P>
-            </td></tr>
-        </form>
-      </table>
-
-
-
-
-     
-      
-
       </div>
   </div>
-</div>
   <?php require "includes/footer.php";?>
 </div>
 </body>

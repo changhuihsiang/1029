@@ -70,7 +70,7 @@
 
     $re = $conn->query($s);
     echo "成功刪除";
-	header("Location: success.php");
+	header("Location: successticket.php");
 
 	
 

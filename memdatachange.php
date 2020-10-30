@@ -52,8 +52,8 @@
                 "<input type='text' class='form-control' value='$phone' name='phone'>";
                 echo "</td></tr>";
 
-                echo "<tr><td></td><td align='center'>";
-                echo "<P align='center'><button type='submit' class='btn btn-outline-dark'>送出</button></P>";
+                echo "<tr><td align='center' colspan='2'>";
+                echo "<br><P align='center'><button type='submit' class='btn btn-outline-dark'>送出</button></P>";
                 echo "</td></tr>";
 
 

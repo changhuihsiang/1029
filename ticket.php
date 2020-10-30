@@ -53,28 +53,24 @@
     <br>
 
 <br>
-<div role="alert">
-    <tr><td><h3><img src="pc/Sign4.png">購票中心</h3></td></tr>
+<div  class="alert alert-secondary " role="alert">
+    <tr><td><h3><img src="pc/Sign5.png">購票預約<small>-購票系統</small></h3></td></tr>
   <hr>
-  <h5>請選擇欲購票種類及張數</h5>
-  <table align="center" width="40%">
+  
+
+
+  <div class="alert alert-light" role="alert" style="width: 100%">
+<table align="center" width="50%" bgcolor="#ffffff">
     <tr><td>
       <img src="pc/ticket01.png" align="center" width="100%">
+      <hr style="width:80%;margin:0 auto;border: 0;height: 2px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))";>
    </td></tr>
   </table>
-
-</div>
-  <div class="alert alert-light" role="alert" style="width: 100%">
-    <div class="alert alert-secondary" role="alert" style="width:80%;margin:0 auto;">
-      
-
+    <div class="alert alert-light" role="alert" style="width:80%;margin:0 auto;">
       <table align="center" width="70%">
-       
-
-
-
         <form method=POST action=cartticket.php>
           <tr align="center"><td>
+            <br>
               <label style="font-size:20px;">購票種類</label>
               <select  name="species" style="font-size:20px;">
                 <option value="">請選擇種類</option>
@@ -101,35 +97,26 @@
               <P align="center"><button type="submit" class="btn btn-dark" >放入購物車</button></P>
             </td></tr>
         </form>
-            
-
-            
-
-
-
-
-
-
       </table>
       <hr>
-      <div class="alert alert-light" role="alert">
+      <div class="alert alert-light" role="alert"  style="background-color:#e5ffe5;">
         <h5 style="text-align: center">購物車</h5>
         <?php require "showcar.php";?>
         <hr>
         <h5 style="text-align: center"><a href="checkout.php"><button type="button" class="btn btn-success">前往結帳</button></a></h5>
       </div>
       <hr>
-      <div class="alert alert-light" role="alert">
-        <h5 style="text-align: center">價位表</h5>
-      </div>
-      
-      <table class="table table-striped" bgcolor="#f0f0f5">
+      <div class="alert alert-light" role="alert" style="background-color:#f5f5f5">
+        <h5 style="text-align: center;font-size: 30px">價位表</h5>
+         <hr style="width:80%;margin:0 auto;border: 0;height: 2px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))";>
+      <!-- </div> -->
+      <table class="table table-striped">
           <thead>
             <tr>
-              <th scope="col"></th>
-              <th scope="col">票種</th>
-              <th scope="col">票價</th>
-              <th scope="col">身分</th>
+              <th scope="col" width="10%"></th>
+              <th scope="col" width="10%">票種</th>
+              <th scope="col" width="10%">票價</th>
+              <th scope="col" width="70%">身分</th>
             </tr>
           </thead>
           <tbody>
@@ -159,11 +146,14 @@
             </tr>
           </tbody>
         </table>
+
+        </div>
       </div>
   </div>
-
+</div>
 
   <?php require "includes/footer.php";?>
 </div>
+
 </body>
 </html>

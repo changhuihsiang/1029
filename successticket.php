@@ -38,25 +38,27 @@
     <br>
 
 <br>
-<div role="alert">
-    <tr><td><h3><img src="pc/Sign4.png">購票中心</h3></td></tr>
+<div  class="alert alert-secondary " role="alert">
+    <tr><td><h3><img src="pc/Sign5.png">購票預約<small>-購票系統<small>-確認訂單<small>-完成訂單</small></small></small></h3></td></tr>
   <hr>
-  <h5>訂單完成</h5>
-  <table align="center" width="40%">
-    <tr><td>
-      <img src="pc/ticket03.png" align="center" width="100%">
-   </td></tr>
-  </table>
-</div>
+  
+
   <div class="alert alert-light" role="alert" style="width: 100%">
-    <div class="alert alert-secondary" role="alert" style="width:80%;margin:0 auto;">
+    <table align="center" width="50%">
+        <tr><td>
+          <img src="pc/ticket03.png" align="center" width="100%">
+       </td></tr>
+    </table>
+
+    <div class="alert alert-light" role="alert" style="width:80%;margin:0 auto;">
       <div class="alert alert-light" role="alert">
         <h5 style="text-align: center">訂單完成</h5>
         <hr>
         <h5 style="text-align: center"><a href="ticket.php"><button type="button" class="btn btn-success">繼續選購</button></a></h5>
-        <h5 style="text-align: center"><a href="checkorder.php"><button type="button" class="btn btn-success">查看訂單</button></a></h5>
+        <h5 style="text-align: center"><a href="page005-2-2-1.php"><button type="button" class="btn btn-success">查看訂單</button></a></h5>
       </div>
       </div>
+  </div>
   </div>
   <?php require "includes/footer.php";?>
 </div>

@@ -44,7 +44,7 @@
 </div>
  <div class="row">
       <div class="col" style="background-color:#ffffffdb;height:200px;text-align:center;line-height:200px;">
-      <a href="ticket.php" style="color:#ffffff;"><button type="button" class="btn btn-info" style="font-size:40px;">購票</button></a>
+      <a href="ticket.php" style="color:#ffffff;"><button type="button" class="btn btn-secondary" style="font-size:40px;">購票</button></a>
       
       </div>
       <div class="col" style="background-color:#ffffffdb;height:200px;text-align:center;line-height:200px;">
