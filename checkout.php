@@ -42,106 +42,52 @@
     <tr><td><h3><img src="pc/Sign4.png">購票中心</h3></td></tr>
   <hr>
   <h5>確認訂單</h5>
+  <table align="center" width="40%">
+    <tr><td>
+      <img src="pc/ticket02.png" align="center" width="100%">
+   </td></tr>
+  </table>
 </div>
   <div class="alert alert-light" role="alert" style="width: 100%">
     <div class="alert alert-secondary" role="alert" style="width:80%;margin:0 auto;">
-      
-
-      <table align="center" width="70%">
-       
-
-
-
-        <form method=POST action=cartticket.php>
-          <tr align="center"><td>
-              <label style="font-size:20px;">結帳方式</label>
-              <select  name="species" style="font-size:20px;">
-                <option value="">現金</option>
-                <option value="220">信用卡</option>
-                <option value="150">愛心票</option>
-                <option value="180">軍警票</option>
-                <option value="110">兒童票</option>
-              </select>
-              <br>
-              <label style="font-size:20px;">購票張數</label>
-              <select  name="num" style="font-size:20px;">
-                <option value="">請選擇張數</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-              <P align="center"><button type="submit" class="btn btn-dark" >放入購物車</button></P>
-            </td></tr>
-        </form>
-            
-
-            
-
-
-
-
-
-
-      </table>
-      <hr>
       <div class="alert alert-light" role="alert">
-        <h5 style="text-align: center">購物車</h5>
+        <h5 style="text-align: center">訂單明細</h5>
         <?php require "showcar.php";?>
         <hr>
-        <h5 style="text-align: center"><a href="checkout.php"><button type="button" class="btn btn-success">前往結帳</button></a></h5>
+        <h5 style="text-align: center"><a href="ticket.php"><button type="button" class="btn btn-success">繼續選購</button></a></h5>
       </div>
-      <hr>
-      <div class="alert alert-light" role="alert">
-        <h5 style="text-align: center">價位表</h5>
-      </div>
+
+      <table align="center" width="70%">
+        <form method=POST action=ticketorder.php>
+          <tr align="center"><td>
+              <label style="font-size:20px;">結帳方式</label>
+              <select  name="payment" style="font-size:20px;">
+                <option value="1">現場付款</option>
+                <option value="2">LINE Pay</option>
+                <option value="3">信用卡付款</option>
+                <option value="4">超商代碼付款</option>
+              </select>
+              <br>
+              <label style="font-size:20px;">取票方式</label>
+              <select  name="gettickets" style="font-size:20px;">
+                <option value="1">現場代碼取票</option>
+                <option value="2">超商代碼取票</option>
+                <option value="3">手機電子票</option>
+              </select>
+              <hr>
+              <P align="center"><button type="submit" class="btn btn-dark" >送出訂單</button></P>
+            </td></tr>
+        </form>
+      </table>
+
+
+
+
+     
       
-      <table class="table table-striped" bgcolor="#f0f0f5">
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">票種</th>
-              <th scope="col">票價</th>
-              <th scope="col">身分</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>一般票</td>
-              <td>$220</td>
-              <td>一般民眾</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>愛心票</td>
-              <td>$150</td>
-              <td>須持有:敬老卡(包含原住民敬老卡)、愛心卡、愛心陪伴卡(限搭配愛心卡使用後)</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>軍警票</td>
-              <td>$180</td>
-              <td>須持有:軍警證明</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>兒童票</td>
-              <td>$110</td>
-              <td>須持有:學生卡、兒童卡為優待票價(30元)</td>
-            </tr>
-          </tbody>
-        </table>
+
       </div>
   </div>
-
-
   <?php require "includes/footer.php";?>
 </div>
 </body>

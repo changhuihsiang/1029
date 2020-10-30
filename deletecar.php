@@ -16,7 +16,7 @@ session_start();
  //        die("Connection failed: " . $conn->connect_error);
  //    }
 
-       require "includes/db.php";
+    require "includes/db.php";
 
 	$sql = "DELETE FROM carticket WHERE ctid =$ctid";
 

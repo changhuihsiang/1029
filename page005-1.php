@@ -79,7 +79,7 @@
 <br>
 
   <div class="alert alert-light" role="alert">
-    <tr><td><h3><img src="pc/Sign5.png">會員登入</h3></td></tr>
+    <tr><td><h3><img src="pc/Sign5.png">會員註冊</h3></td></tr>
     <hr>
   </div>
 <div class="alert alert-light" role="alert" style="width: 100%">

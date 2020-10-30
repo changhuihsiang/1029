@@ -20,7 +20,7 @@
 
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-echo "<table class='table' bgcolor='#ffffff'>";
+    echo "<table class='table' bgcolor='#ffffff'>";
         echo " <thead class='thead-dark'>";
          echo "  <tr>";
           echo "   <th scope='col'></th>";

@@ -3,6 +3,7 @@
   //先從Session中取出user_type
   //以備後續確認瀏覽者的身份別
   $user_type = $_SESSION["user_type"];
+  
 ?>
 
 
@@ -38,65 +39,25 @@
 
 <br>
 <div role="alert">
-    <tr><td><h3><img src="pc/Sign4.png">預約導覽</h3></td></tr>
+    <tr><td><h3><img src="pc/Sign4.png">購票中心</h3></td></tr>
   <hr>
-  <h5>請選擇欲預約導覽的時間及人數</h5>
+  <h5>訂單完成</h5>
+  <table align="center" width="40%">
+    <tr><td>
+      <img src="pc/ticket03.png" align="center" width="100%">
+   </td></tr>
+  </table>
 </div>
- 
-<div class="alert alert-light" role="alert" style="width: 100%">
+  <div class="alert alert-light" role="alert" style="width: 100%">
     <div class="alert alert-secondary" role="alert" style="width:80%;margin:0 auto;">
-      <table align="center" width="70%">
-        <form method=POST action=cartticket.php>
-          <tr align="center"><td>
-              <label style="font-size:20px;">姓　　名</label>
-              <input type="text" name="name">
-              <br>
-              <label style="font-size:20px;">電　　話</label>
-              <input type="text" name="phone">
-              <br>
-              <label style="font-size:20px;">預約日期</label>
-              <input type="date" name="date">
-              <br>
-              <label style="font-size:20px;">預約時間</label>
-              <input type="text" name="time">
-              <br>
-              <label style="font-size:20px;">備註</label>
-              <input type="text" name="remarks">
-              <br>
-              <label style="font-size:20px;">購票張數</label>
-              <P align="center"><button type="submit" class="btn btn-dark" >放入購物車</button></P>
-            </td></tr>
-        </form>
-      </table>
-      <hr>
       <div class="alert alert-light" role="alert">
-        <h5 style="text-align: center">購物車</h5>
-        <?php require "showcar.php";?>
+        <h5 style="text-align: center">訂單完成</h5>
         <hr>
-        <h5 style="text-align: center"><a href="checkout.php"><button type="button" class="btn btn-success">前往結帳</button></a></h5>
-      </div>
-      <hr>
-      <div class="alert alert-light" role="alert">
-        <h5 style="text-align: center">價位表</h5>
+        <h5 style="text-align: center"><a href="ticket.php"><button type="button" class="btn btn-success">繼續選購</button></a></h5>
+        <h5 style="text-align: center"><a href="checkorder.php"><button type="button" class="btn btn-success">查看訂單</button></a></h5>
       </div>
       </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <?php require "includes/footer.php";?>
 </div>
 </body>

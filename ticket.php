@@ -57,6 +57,12 @@
     <tr><td><h3><img src="pc/Sign4.png">購票中心</h3></td></tr>
   <hr>
   <h5>請選擇欲購票種類及張數</h5>
+  <table align="center" width="40%">
+    <tr><td>
+      <img src="pc/ticket01.png" align="center" width="100%">
+   </td></tr>
+  </table>
+
 </div>
   <div class="alert alert-light" role="alert" style="width: 100%">
     <div class="alert alert-secondary" role="alert" style="width:80%;margin:0 auto;">
