@@ -57,9 +57,10 @@
                   }
         }
         echo "$totall";
-        $sqlll = "INSERT INTO ticketorder( toid, mid, payment, gettickets, sum) VALUES ('$now','$userid','$payment','$gettickets','$totall')";
+        $sqlll = "INSERT INTO ticketorder( toid, mid, payment, gettickets, sum, tostatus) VALUES ('$now','$userid','$payment','$gettickets','$totall','1')";
                 if ($conn->query($sqlll) === TRUE) {
                     echo "成功";
+                    header("Location: successticket.php");
                   } else {
                     echo "Error: " . $sqlll . "<br>" . $conn->error;
                   }
@@ -70,7 +71,7 @@
 
     $re = $conn->query($s);
     echo "成功刪除";
-	header("Location: successticket.php");
+	
 
 	
 

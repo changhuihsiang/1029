@@ -27,6 +27,7 @@ session_start();
             echo "                <th scope='col'>取票方式</th>";
             echo "                <th scope='col'>總金額</th>";
             echo "                <th scope='col'>訂單明細</th>";
+            echo "                <th scope='col'>訂單狀態</th>";            
             echo "                <th scope='col'>刪除</th>";
             echo "            </tr>";
             echo "        </thead>";
@@ -35,7 +36,7 @@ session_start();
             $sum = $row["sum"];
             $gettickets = $row["gettickets"];
             $toid = $row["toid"];
-            
+            $tostatus = $row["tostatus"];
             
             echo "            <tr align='center'>";
             echo "                <th scope='row'>$toid</th>";
@@ -50,6 +51,17 @@ session_start();
             echo "                </td>";
             echo "                <td>$sum</td>";
             echo "                <td><a href='looktitcketorderlist.php?toid=$toid' style='color:#000000;'>查閱</a></td>";
+            echo "                <td>";
+
+            if($tostatus==1){
+                echo "尚未繳款";
+            } elseif ($tostatus==2) {
+                echo"訂單處理中";
+            } elseif ($tostatus==3) {
+                echo"已收單";
+            }
+
+            echo "</td>";
             echo "                <td><a href='deletetitcketorder.php?toid=$toid'> <button type='button' class='btn btn-outline-danger'>X</button></a></td>";
             echo "            </tr>";
         }

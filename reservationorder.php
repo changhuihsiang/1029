@@ -29,7 +29,7 @@
 
 			require "includes/db.php";
 
-			$sqll = "INSERT INTO reservation( mid, name, phone, datet, timet, peo, remarks) VALUES ('$user_type','$name','$phone','$date','$time','$peo','$remarks')";
+			$sqll = "INSERT INTO reservation( mid, name, phone, datet, timet, peo, restatus, remarks) VALUES ('$user_type','$name','$phone','$date','$time','$peo','1','$remarks')";
                 if ($conn->query($sqll) === TRUE) {
                     echo "成功";
                     header("Location: successreservation.php?tick=7");
