@@ -42,7 +42,10 @@ session_start();
             $timet = $row["timet"];
             $peo = $row["peo"];
             $remarks = $row["remarks"];
-            
+            if ($remarks==NULL){
+
+                $remarks="無";
+            }
             echo "            <tr align='center'>";
             echo "                <th scope='row'>$rid</th>";
             echo "                <td>$name</td>";

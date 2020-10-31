@@ -77,20 +77,28 @@
 <div class="container" style="margin:0px auto">
     <?php require "includes/exhibition.php";?>
     <br>
-    <div class="alert alert-danger" role="alert">
-      <tr><td><h3><img src="pc/Sign3.png">創客作品</h3></td></tr>
-      <hr>
-      <h5>作品:<?php echo "$wname"; ?></h5>
+  <div class="alert alert-danger" role="alert">
+    <div class="row">
+      <div align="left" class="col" style="width: 50%">
+        <h3><img src="pc/Sign3.png">創客作品<small>-作品分享</small></h3>
+      </div>
+      <div align="right" class="col" style="width: 50%">
+          <?php
+            if ($user_type!=NULL) {
+              echo "<table width='100%  border='1px'>
+                      <tr><td align='right'>
+                        <a href='page003.php'><button type'button' class='btn btn-outline-danger'>BACK</button></a>
+                        <a href='addworks.php'><button type'button' class='btn btn-outline-danger'>＋作品</button></a>
+                      </td></tr> 
+                    </table>";
+            } else  {
+              echo "<table width='100%  border='1px'><tr><td align='right'>＊登入會員即可分享作品</td></tr></table>";
+            }
+          ?>
+      </div>
     </div>
-<?php  
-  if ($user_type!=NULL) {
-    echo "<table width='100%  border='1px'><tr><td align='right'><a href='addworks.php'><button type'button' class='btn btn-danger'>新增</button></a></td></tr></table>";
-  } else  {
-    echo "<table width='100%  border='1px'><tr><td align='right'>＊登入會員即可分享作品及留言</td></tr></table>";
-  }
-?>
-
-
+    </div>
+ <h3 align="center"><b><?php echo "$wname"; ?></b></h3>
 
 <div class="alert alert-light" role="alert" style="width: 100%" >
 <table align="center" width="80%">
@@ -109,10 +117,10 @@
     <td>
       <table align="center" width="80%">
         <tr><td colspan="3"><hr></td></tr>
-        <tr>
+        <tr height="30%">
           <td width="29.75%" align="right" bgcolor="#f0f8ff">
             <font size="5">作者</font>
-          </td>
+           </td>
           <td width="0.5%" bgcolor="#ffffff"></td>
           <td width="69.5%" align="left" bgcolor="#fafdff">
             <font size="5"><?php echo "$mwname"; ?></font>
@@ -120,6 +128,7 @@
         </tr>
 
         <tr>
+          <hr>
           <td width="29.75%" align="right" bgcolor="#f0f8ff">
             <font size="5">作品介紹</font>
           </td>
@@ -140,32 +149,45 @@
   <tr>
     <td>
       <table align="center" width="80%" bgcolor="#f0f8ff">
-         <tr><td bgcolor="#ffffff"><hr></td></tr>
-        <tr><td bgcolor="#e3e3e3">留言表</td></tr>
+        <tr><td bgcolor="#ffffff"  colspan="2"><hr></td></tr>
+        <tr><td bgcolor="#e3e3e3"   colspan="2">留言表</td></tr>
+        <tr><td colspan="2" height="2px" bgcolor="#000000"></td></tr>
+
           <?php 
           $sql = "SELECT * FROM message WHERE wid='$wid'";
 
               $result = $conn->query($sql);
               if ($result->num_rows > 0) {
                 $number = 1;
-                  while($row = $result->fetch_assoc()) {
+                while($row = $result->fetch_assoc()) {
                      $mid = $row["mid"];
                      $message = $row["message"];
-
+                     $messageid = $row["messageid"];
                      $sql = "SELECT * FROM mem WHERE id='$mid'";
                      $res = $conn->query($sql);
                       if ($res->num_rows > 0) {
                         while($row = $res->fetch_assoc()) {
-                            $mname = $row["name"];
-                     }}
+                                $mname = $row["name"];
+                                $ckid  = $row["id"];
+                          }}
                      
           ?>
 
-        <tr><td>FLOOR：<?php echo"$number"; ?></td></tr>
+        <tr><td   colspan="2">FLOOR：<?php echo"$number"; ?></td></tr>
         <tr><td>
-            <?php echo"<p>$mname".":"."$message</p>"; ?>
+            <?php echo"<p>$mname"."："."$message</p>"; ?>
             <hr>
-        </td></tr>
+            </td>
+            <td align="right">
+              <?php
+              if($ckid==$user_type){
+                echo "<a href='deletemessage.php?messageid=$messageid&wid=$wid' style='color:#000000;'>刪除</a>";
+              }
+              ?>
+            </td>
+        </tr>
+
+          <tr><td colspan="2" height="2px" bgcolor="#e0e0e0"></td></tr>
           <?php $number = $number+1;  } } $conn->close(); ?>
       </table>
 

@@ -25,6 +25,7 @@ if(isset($_POST["submit"])) {
     $uploadOk = 1;
   } else {
     echo "File is not an image.";
+    header("Location: addworks.php?Er=1");
     $uploadOk = 0;
   }
 }
@@ -32,12 +33,14 @@ if(isset($_POST["submit"])) {
 // Check if file already exists
 if (file_exists($target_file)) {
   echo "檔案名稱已有人使用";
+  header("Location: addworks.php?Er=2");
   $uploadOk = 0;
 }
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 50000000) {
   echo "檔案太大囉";
+  header("Location: addworks.php?Er=3");
   $uploadOk = 0;
 }
 
@@ -45,12 +48,14 @@ if ($_FILES["fileToUpload"]["size"] > 50000000) {
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
   echo "檔案只限 JPG, JPEG, PNG & GIF .";
+  header("Location: addworks.php?Er=4");
   $uploadOk = 0;
 }
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
   echo "Sorry, your file was not uploaded.";
+  header("Location: addworks.php?Er=5");
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -84,6 +89,7 @@ if ($uploadOk == 0) {
 
   } else {
     echo "Sorry, there was an error uploading your file.";
+    header("Location: addworks.php?Er=6");
   }
 }
 

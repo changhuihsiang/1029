@@ -3,6 +3,21 @@
   //先從Session中取出user_type
   //以備後續確認瀏覽者的身份別
   $user_type = $_SESSION["user_type"];
+  $Er = $_GET["Er"];
+  if($Er==1){
+    ?><script>alert('檔案並非圖片');</script><?php
+  } elseif ($Er==2) {
+    ?><script>alert('檔案名稱已有人使用');</script><?php
+  } elseif ($Er==3) {
+    ?><script>alert('檔案太大囉');</script><?php
+  } elseif ($Er==4) {
+    ?><script>alert('檔案只限 JPG, JPEG, PNG & GIF');</script><?php
+  } elseif ($Er==5) {
+    ?><script>alert('檔案無法上傳');</script><?php
+  }
+
+
+
 ?>
 
 
@@ -36,19 +51,24 @@
 
 
 <div class="alert alert-danger" role="alert">
-    <tr><td><h3><img src="pc/Sign3.png">新增作品</h3></td></tr>
-  <hr>
-  <h5>請上傳您的創作，讓更多人看見不一樣的作品</h5>
-</div>
-<?php  
-  if ($user_type!=NULL) {
-    echo "<table width='100%  border='1px'><tr><td align='right'><a href='page003.php'><button type'button' class='btn btn-danger'>BACK</button></a></td></tr></table>";
-  } 
-?>
-
+   <div class="row">
+      <div align="left" class="col" style="width: 50%">
+        <h3><img src="pc/Sign3.png">創客作品<small>-作品分享<small>-新增作品</small></small></h3>
+      </div>
+      <div align="right" class="col" style="width: 50%">
+          <?php  
+            if ($user_type!=NULL) {
+              echo "<table width='100%  border='1px'><tr><td align='right'><a href='page003.php'><button type'button' class='btn btn-danger'>BACK</button></a></td></tr></table>";
+            } else  {
+              echo "<table width='100%  border='1px'><tr><td align='right'>＊登入會員即可分享作品</td></tr></table>";
+            }
+          ?>
+      </div>
+    </div>
 <hr>
 
 <div class="alert alert-light" role="alert" style="width: 100%">
+  <h5>請上傳您的創作，讓更多人看見不一樣的作品</h5>
   <div class="alert alert-light" role="alert" style="width:60%;margin:0 auto;">
     
 <table align="center" width="70%">
@@ -75,7 +95,7 @@
 </table>
 </div>
 </div>
-
+</div>
 
 <hr>
   <?php require "includes/footer.php";?>

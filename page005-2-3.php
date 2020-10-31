@@ -8,7 +8,11 @@
   //先從Session中取出user_type
   //以備後續確認瀏覽者的身份別
   $user_type = $_SESSION["user_type"];
-  
+  if ($user_type==NULL) {
+      echo "123";
+      header("Location: page005.php");
+    }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,60 +43,15 @@
 <br>
 
 <?php 
-
 if ($user_type==NULL) {
-
-?>
-
-
-
-  <div class="alert alert-light" role="alert">
-    <tr><td><h3><img src="pc/Sign5.png">會員中心</h3></td></tr>
-    <hr>
-  </div>
-<div class="alert alert-light" role="alert" style="width: 100%">
-  <div class="alert alert-secondary" role="alert" style="width:60%;margin:0 auto;">
-    
-<table align="center" width="50%">
-  <tr><td>
-    <form method=POST action=loginin.php>
-      <div class="form-group">
-        <label for="exampleInputEmail1">會員帳號</label>
-        <?php
-        echo "
-        <input type='email' class='form-control' id='exampleInputEmail1' aria-describedby='emailHelp' value='$userid' name='userid'>
-        ";
-        ?>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">密碼</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" name="pass">
-      </div>
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <P align="center"><button type="submit" class="btn btn-dark" >登入</button></P>
-      <P align="center"><a href="page005-1.php"  class="btn btn-link">尚未註冊?</a></P>
-    </form>
-  </td></tr>
-</table>
-</div>
-</div>
-
-
-<?php } else{  ?>
+// 沒有登入跳登入畫面
+ } else{  ?>
 
 <div class="alert alert-light" role="alert">
-    <tr><td><h3><img src="pc/Sign5.png">會員中心</h3></td></tr>
+    <tr><td><h3><img src="pc/Sign5.png">會員中心<small>-管理作品</small></h3></td></tr>
     <hr>
     
   </div>
-
-
-div>
-
 <div class="alert alert-light" role="alert" style="width: 100%">
   <div class="alert alert-secondary" role="alert" style="width:90%;margin:0 auto;">
     <div class="alert alert-light" role="alert">
@@ -102,17 +61,23 @@ div>
             </div>
             <div  role="alert" align="center">
                 <h4  class="alert-heading">管理作品</h4>
+                
+
                 <table align="center" width="80%">
                   <tr>
                     <td>
                       <hr style="width:80%;margin:0 auto;border: 0;height: 2px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))";>
                       <br>
                     </td>
+
+
                   </tr>
                   <tr align="center">
-                    <td><h5><?php require "memdatachange.php";?></h5></td>
+                    <td><h5><?php require "checkworks.php";?></h5></td>
                   </tr>
                 </table>
+
+
 
             </div>
           </div>

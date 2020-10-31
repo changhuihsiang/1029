@@ -38,21 +38,21 @@
     <br>
 
 <br>
-<div role="alert">
-    <tr><td><h3><img src="pc/Sign4.png">購票中心</h3></td></tr>
+<div class="alert alert-warning" role="alert">
+    <tr><td><h3><img src="pc/Sign.png">購票預約<small>-預約導覽<small>-成功預約</small></small></h3></td></tr>
   <hr>
-  <h5>訂單完成</h5>
-</div>
+
   <div class="alert alert-light" role="alert" style="width: 100%">
-    <div class="alert alert-secondary" role="alert" style="width:80%;margin:0 auto;">
+    <div class="alert alert-light" role="alert" style="width:80%;margin:0 auto;">
       <div class="alert alert-light" role="alert">
-        <h5 style="text-align: center">訂單完成</h5>
+        <h5 style="text-align: center">成功預約</h5>
         <hr>
-        <h5 style="text-align: center"><a href="reservation.php"><button type="button" class="btn btn-success">繼續選購</button></a></h5>
-        <h5 style="text-align: center"><a href="page005-2-2-2.php"><button type="button" class="btn btn-success">查看訂單</button></a></h5>
+        <h5 style="text-align: center"><a href="reservation.php"><button type="button" class="btn btn-warning">回預約導覽</button></a></h5>
+        <h5 style="text-align: center"><a href="page005-2-2-2.php"><button type="button" class="btn btn-warning">查尋預約訂單</button></a></h5>
       </div>
       </div>
   </div>
+ </div> 
   <?php require "includes/footer.php";?>
 </div>
 </body>

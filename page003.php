@@ -39,38 +39,36 @@
 
 
 <div class="alert alert-danger" role="alert">
-    <tr><td><h3><img src="pc/Sign3.png">創客作品</h3></td></tr>
+    <div class="row">
+      <div align="left" class="col" style="width: 50%">
+        <h3><img src="pc/Sign3.png">創客作品<small>-作品分享</small></h3>
+      </div>
+      <div align="right" class="col" style="width: 50%">
+          <?php  
+            if ($user_type!=NULL) {
+              echo "<table width='100%  border='1px'><tr><td align='right'><a href='addworks.php'><button type'button' class='btn btn-outline-danger'>＋作品</button></a></td></tr></table>";
+            } else  {
+              echo "<table width='100%  border='1px'><tr><td align='right'>＊登入會員即可分享作品</td></tr></table>";
+            }
+          ?>
+      </div>
+    </div>
+</div>
+<div  class="alert alert-light" role="alert">
   <hr>
   <h5>來自每一位創作者的手</h5>
   <h5>你的邂逅、你的早晨、你的每一天……</h5>
   <h5>將你周遭的人事物，透過創作，記錄下來吧！</h5>
+
+  
 </div>
-<?php  
-  if ($user_type!=NULL) {
-    echo "<table width='100%  border='1px'><tr><td align='right'><a href='addworks.php'><button type'button' class='btn btn-danger'>新增</button></a></td></tr></table>";
-  } else  {
-    echo "<table width='100%  border='1px'><tr><td align='right'>＊登入會員即可分享作品</td></tr></table>";
-  }
-?>
+
+
 
 <hr>
 
-    <div class='row'>
-       
-
-
+    <div class='row' align="center">
 <?php
-    // $servername = "localhost";
-    // $username = "root";
-    // $password = "00000000";
-    // $dbname = "gallery";
-    // // Create connection
-    // $conn = new mysqli($servername, $username, $password, $dbname);
-    // // Check connection
-    // if ($conn->connect_error) {
-    //     die("Connection failed: " . $conn->connect_error);
-    // }
-
     require "includes/db.php";
     // 以下建立SQL查詢指令
     // $sql = "SELECT * FROM news order by id desc";
@@ -96,24 +94,30 @@
               
            
   ?>
-
-        <div class='col-md-4 col-sm-6 col-xs-12'>
-          <div class="card" style="width: 18rem;height: 27rem;">
-           <?php
-              $tags="<img src='uploads/^^^^' class='card-img-top' alt='...' style='height: 12rem;'>"; 
-              echo str_replace("^^^^",$wlink,$tags);
-           ?>
-              <div class="card-body">
-
+        <div class='col-md-4 col-sm-6 col-xs-12'style="width: 20rem">
+          <div class="card" style="width: 20rem;height: 27rem;" align="center">
+                <table width="70%" align="center">
+                  <tr><td  align="center">
+                <?php
+                    $tags="<img src='uploads/^^^^'class='card-img-top;' style='height: 12rem;' >"; 
+                    echo str_replace("^^^^",$wlink,$tags);
+                ?>
+              </td></tr>
+            </table>
+            <div class="card-body" style="width: 20rem" align="left">
                 <h5 class="card-title">作品名稱l<?php echo "$wname"; ?></h5>
                 <p class="card-text"><?php echo "$wshort"; ?></p>
                 <p class="card-text">創作者－<?php echo "$mwname"; ?></p>
                 <p align="right">
-                  <?php echo "<a href='works.php?wid=$wid' class='btn btn-dark'>欣賞</a>";?>
+                  <?php echo "<a href='works.php?wid=$wid' class='btn btn-danger'>欣賞</a>";?>
                 </p>
               </div>
           </div>
+          <hr>
         </div>
+
+
+        
 <?php
          }
        }
@@ -121,12 +125,7 @@
        }
       }
    $conn->close();
-
-
-
 ?>
-
-
 
   </div>
   <p></p>

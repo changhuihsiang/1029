@@ -39,9 +39,17 @@ session_start();
             
             echo "            <tr align='center'>";
             echo "                <th scope='row'>$toid</th>";
-            echo "                <td>$gettickets</td>";
+            echo "                <td>";
+            if($gettickets==1){
+                echo"現場代碼取票";
+            } elseif ($gettickets==2) {
+                echo"超商代碼取票";
+            } elseif ($gettickets==3) {
+                echo"手機電子票";
+            }
+            echo "                </td>";
             echo "                <td>$sum</td>";
-            echo "                <td>查閱</td>";
+            echo "                <td><a href='looktitcketorderlist.php?toid=$toid' style='color:#000000;'>查閱</a></td>";
             echo "                <td><a href='deletetitcketorder.php?toid=$toid'> <button type='button' class='btn btn-outline-danger'>X</button></a></td>";
             echo "            </tr>";
         }
