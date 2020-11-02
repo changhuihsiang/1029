@@ -1,24 +1,12 @@
 <?php
 session_start();
-    $id = $_SESSION["user_type"];
     $userid = $_SESSION["user_type"];
-    // $servername = "localhost";
-    // $username = "root";
-    // $password = "00000000";
-    // $dbname = "gallery";
-    // // Create connection
-    // $conn = new mysqli($servername, $username, $password, $dbname);
-    // // Check connection
-    // if ($conn->connect_error) {
-    //     die("Connection failed: " . $conn->connect_error);
-    // }
-
-       require "includes/db.php";
+    require "../includes/db.php";
     // 以下建立SQL查詢指令
     // $sql = "SELECT * FROM news order by id desc";
     //使用 insert into    
 
-    $sql = "SELECT * FROM reservation WHERE mid='$userid'";
+    $sql = "SELECT * FROM reservation";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
             echo "    <table class='table'>";
@@ -32,6 +20,7 @@ session_start();
             echo "            </tr>";
             echo "        </thead>";
             echo "        <tbody>";
+            $n = 1;
         while($row = $result->fetch_assoc()) {
             $rid = $row["rid"];
             $name = $row["name"];
@@ -45,13 +34,13 @@ session_start();
                 $remarks="無";
             }
             echo "            <tr align='center'>";
-            echo "                <th scope='row'>$rid</th>";
+            echo "                <th scope='row'>$n</th>";
             echo "                <td>$name</td>";
             echo "                <td>";
              if ($restatus==1){
-                echo "等候中";
+                echo "<font color='red'><b>等候中</font>";
             } elseif ($restatus==2) {
-                echo "成功預約";
+                echo "<font color='blue'>成功預約</font>";
             } elseif ($restatus==3) {
                 echo "失敗預約";
             }
@@ -59,6 +48,7 @@ session_start();
             echo "                <td><a href='lookreservation.php?rid=$rid'> <button type='button' class='btn btn-outline-dark'>查看</button></a></td>";
             echo "                <td><a href='deletereservation.php?rid=$rid'> <button type='button' class='btn btn-outline-danger'>X</button></a></td>";
             echo "            </tr>";
+            $n=$n+1;
         }
         echo "        </tbody>";
         echo "    </font></table>";

@@ -38,8 +38,13 @@ $result = $conn->query($sql);
                 //如果是相等
                     echo "<hr>$name"."你好";
                     echo "登入成功";
+                    if ($id==34){
                     $_SESSION["user_type"] = $id;
-                    header("Location: page005-2.php?name=$name&userid=$userid");
+                    header("Location: management/management.php");
+                    } else {
+                        $_SESSION["user_type"] = $id;
+                        header("Location: page005-2.php?name=$name&userid=$userid");
+                    }
             } else{
                 if($pass==NULL){
                     header("Location: page005.php?userid=$userid&past=1");

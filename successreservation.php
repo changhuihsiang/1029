@@ -45,10 +45,11 @@
   <div class="alert alert-light" role="alert" style="width: 100%">
     <div class="alert alert-light" role="alert" style="width:80%;margin:0 auto;">
       <div class="alert alert-light" role="alert">
-        <h5 style="text-align: center">成功預約</h5>
+        <h3 style="text-align: center">成功預約</h3>
+        <h5 style="text-align: center">請於24HR之後至會員中心確認預約狀態</h5>
         <hr>
-        <h5 style="text-align: center"><a href="reservation.php"><button type="button" class="btn btn-warning">回預約導覽</button></a></h5>
-        <h5 style="text-align: center"><a href="page005-2-2-2.php"><button type="button" class="btn btn-warning">查尋預約訂單</button></a></h5>
+        <h5 style="text-align: center"><a href="page004.php"><button type="button" class="btn btn-outline-dark">回預約導覽</button></a></h5>
+        <h5 style="text-align: center"><a href="page005-2-2-2.php"><button type="button" class="btn btn-outline-dark">查看訂單</button></a></h5>
       </div>
       </div>
   </div>

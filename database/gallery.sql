@@ -46,9 +46,8 @@ INSERT INTO `carticket` (`ctid`, `mid`, `species`, `num`) VALUES
 (13, '30', '220', '3'),
 (14, '30', '180', '6'),
 (15, '30', '110', '6'),
-(25, '25', '220', '2'),
-(26, '25', '180', '2'),
-(38, '26', '150', '2');
+(38, '26', '150', '2'),
+(53, '34', '220', '1');
 
 -- --------------------------------------------------------
 
@@ -72,17 +71,16 @@ CREATE TABLE `mem` (
 INSERT INTO `mem` (`id`, `name`, `username`, `password`, `birth`, `phone`) VALUES
 (1, '張惠香', '12346@gmail.com', '123', '860920', '0986025718'),
 (20, '胖子', '789@mail.com', '12345678', '890612', '0988753951'),
-(22, '333', '333@lll', '333', '333', '333'),
 (23, '小狗', 'ac123456dk@gmail.com', '123456', '880504', '0986025718'),
 (24, '涵涵', 'easonlmaggie@gmail.com', '0000', '890327', '0912345678'),
-(25, '十月二十六日', '1026@mail.com', '1026', '2020-10-22', '0921345816'),
+(25, '十月二十六日', '1026@mail.com', '1026', '2020-10-26', '0921345816'),
 (26, '今天吃弘爺', '1027@mail.com', '1027', '19971027', '0912345789'),
-(28, '', '1234', '', '', ''),
 (29, '李一一', 'maggie@gmail.com', '88', '19970819', '8035678'),
 (30, '張鏸香', '2020@gmail.com', '2020', '1997-09-20', '0988756423'),
 (31, '郭小小', 'accc123456dk@gmail.com', '789456', '2020-10-13', '0978456123'),
 (32, '測試先生', 'aaa@gmail.com', 'aaa', '2020-10-28', '098877554'),
-(33, '張鏸香', 'u0545008@gmail.com', '00000', '1997-09-20', '0986025718');
+(33, '張鏸香', 'u0545008@gmail.com', '00000', '1997-09-20', '0986025718'),
+(34, '管理者', 'management@gmail.com', 'management', '2020-11-25', '0000000000');
 
 -- --------------------------------------------------------
 
@@ -107,7 +105,6 @@ INSERT INTO `message` (`messageid`, `mid`, `wid`, `message`) VALUES
 (5, '25', '3', '很認真很好看'),
 (6, '25', '4', '花朵很真實'),
 (7, '25', '4', '優雅而獨特的魅力'),
-(8, '25', '14', '123'),
 (9, '25', '13', '12\r\n'),
 (10, '25', '15', '美麗啊'),
 (11, '32', '15', 'nice'),
@@ -123,13 +120,14 @@ INSERT INTO `message` (`messageid`, `mid`, `wid`, `message`) VALUES
 (26, '33', '11', '有感覺'),
 (27, '33', '12', '可愛哦'),
 (28, '33', '13', '小花多很可愛'),
-(29, '33', '14', '劉哥哥!'),
 (30, '33', '15', '下雨後種會放晴'),
 (31, '33', '16', '這是背影嗎?哈哈哈'),
 (32, '33', '17', '猶豫的感覺嗎'),
 (33, '32', '16', '我自己化的哦很棒吧'),
 (34, '32', '18', '娃好特別的LOGO'),
-(35, '32', '20', '那現在還在徵人嗎?');
+(35, '32', '20', '那現在還在徵人嗎?'),
+(37, '25', '4', '123123'),
+(38, '25', '4', '123123');
 
 -- --------------------------------------------------------
 
@@ -145,6 +143,7 @@ CREATE TABLE `reservation` (
   `datet` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `timet` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `peo` varchar(200) NOT NULL,
+  `restatus` varchar(200) NOT NULL,
   `remarks` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -152,12 +151,17 @@ CREATE TABLE `reservation` (
 -- 傾印資料表的資料 `reservation`
 --
 
-INSERT INTO `reservation` (`rid`, `mid`, `name`, `phone`, `datet`, `timet`, `peo`, `remarks`) VALUES
-(10, '26', '今天吃弘爺', '0912345789', '2020-10-12', '下午14:00', '5-10人', ''),
-(12, '26', '張小姐', '0912345789', '2020-10-15', '下午14:00', '10-20人', '789'),
-(13, '25', '陳小姐', '0921345816', '2020-10-30', '下午14:00', '10-20人', '有老人家'),
-(14, '33', '張鏸香', '0986025718', '2020-10-31', '下午14:00', '10-20人', '需要輪椅一台'),
-(15, '33', '張鏸紅', '0986036021', '2020-11-26', '下午16:00', '20人以上', '');
+INSERT INTO `reservation` (`rid`, `mid`, `name`, `phone`, `datet`, `timet`, `peo`, `restatus`, `remarks`) VALUES
+(10, '26', '今天吃弘爺', '0912345789', '2020-10-12', '下午14:00', '5-10人', '3', ''),
+(12, '26', '張小姐', '0912345789', '2020-10-15', '下午14:00', '10-20人', '1', '789'),
+(13, '25', '陳小姐', '0921345816', '2020-10-30', '下午14:00', '10-20人', '2', '有老人家'),
+(14, '33', '張鏸香', '0986025718', '2020-10-31', '下午14:00', '10-20人', '1', '需要輪椅一台'),
+(15, '33', '張鏸紅', '0986036021', '2020-11-26', '下午16:00', '20人以上', '2', ''),
+(17, '26', '張小姐', '0912345789', '2020-10-15', '下午14:00', '10-20人', '1', '789'),
+(18, '26', '張小姐', '0912345789', '2020-10-15', '下午14:00', '10-20人', '2', '789'),
+(19, '32', '測試先生', '0988775777', '2020-11-06', '下午14:00', '5-10人', '1', ''),
+(20, '32', '測試先生', '0923654875', '2020-11-20', '下午14:00', '10-20人', '2', '一二三四五六'),
+(23, '25', '陳先生', '0921345816', '2020-11-28', '下午14:00', '10-20人', '1', '');
 
 -- --------------------------------------------------------
 
@@ -170,26 +174,33 @@ CREATE TABLE `ticketorder` (
   `mid` varchar(200) NOT NULL,
   `payment` varchar(200) NOT NULL,
   `gettickets` varchar(200) NOT NULL,
-  `sum` varchar(200) NOT NULL
+  `sum` varchar(200) NOT NULL,
+  `tostatus` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- 傾印資料表的資料 `ticketorder`
 --
 
-INSERT INTO `ticketorder` (`toid`, `mid`, `payment`, `gettickets`, `sum`) VALUES
-(5, '25', '1', '1', '2140'),
-(6, '25', '2', '2', '400'),
-(7, '25', '3', '2', '840'),
-(8, '26', '1', '1', '2070'),
-(9, '26', '3', '3', '940'),
-(10, '26', '2', '2', '1540'),
-(11, '26', '3', '2', '220'),
-(12, '33', '3', '3', '1630'),
-(13, '33', '2', '3', '760'),
-(14, '33', '3', '2', '660'),
-(15, '32', '3', '1', '3470'),
-(16, '32', '2', '1', '220');
+INSERT INTO `ticketorder` (`toid`, `mid`, `payment`, `gettickets`, `sum`, `tostatus`) VALUES
+(5, '25', '1', '1', '2140', '3'),
+(6, '25', '2', '2', '400', '3'),
+(7, '25', '3', '2', '840', '1'),
+(8, '26', '1', '1', '2070', '2'),
+(9, '26', '3', '3', '940', '3'),
+(10, '26', '2', '2', '1540', '2'),
+(11, '26', '3', '2', '220', '1'),
+(12, '33', '3', '3', '1630', '1'),
+(13, '33', '2', '3', '760', '2'),
+(14, '33', '3', '2', '660', '1'),
+(15, '32', '3', '1', '3470', '2'),
+(16, '32', '2', '1', '220', '3'),
+(17, '33', '3', '2', '660', '3'),
+(18, '33', '3', '2', '660', '3'),
+(19, '32', '1', '1', '880', '1'),
+(20, '32', '2', '3', '900', '1'),
+(21, '32', '2', '2', '2060', '1'),
+(22, '36', '3', '2', '1350', '1');
 
 -- --------------------------------------------------------
 
@@ -232,7 +243,12 @@ INSERT INTO `ticketorderlist` (`tolid`, `toid`, `species`, `num`) VALUES
 (30, '15', '150', '7'),
 (31, '15', '110', '10'),
 (32, '15', '220', '6'),
-(33, '16', '220', '1');
+(33, '16', '220', '1'),
+(34, '19', '180', '8'),
+(35, '19', '220', '4'),
+(36, '20', '150', '6'),
+(37, '21', '220', '2'),
+(38, '21', '180', '9');
 
 -- --------------------------------------------------------
 
@@ -260,7 +276,6 @@ INSERT INTO `works` (`wid`, `mid`, `wname`, `wintroduction`, `wshort`, `wlink`) 
 (11, 25, '人', '人在生物學上通常指智人（學名：Homo sapiens），偶爾也泛指人屬的史前物種，與其他靈長類動物一樣，人類是社會性的。人類個體之間的社會交際創立了廣泛的傳統習俗、宗教制度、價值觀、法律，這些共同構成了人類社會的基礎。人尤其擅長用口語、手勢、肢體語言與書面語言來溝通、協作、表達自我、交際、交換意見、組織事物。', '人在生物學上通常指智人（學名：Homo sapiens），偶爾也泛指人屬的史前物種', 'people.jpg'),
 (12, 25, '情侶', '手繪頭像Q版卡通簡筆畫黑白彩色可選情侶手機殼圖案設計定製照片', '手繪頭像Q版卡通簡筆畫黑白彩色可選情侶手機殼圖案設計定製照片', 'cuple.jpg'),
 (13, 25, '花', '獲取手繪花朵插圖設計的更多詳細信息，此圖像格式為JPG/PSD，lovepik編號為400216897，使用場景為其他，大小為39.6 MB。 在Lovepik上免費下載近100,000個矢量插圖資源，您可以在Web和移動界面，廣告設計和印刷設計中使用這些資源，使您的項目設計的視覺層次結構和頁面佈局更加獨特和前沿。', '獲取手繪花朵插圖設計的更多詳細信息，', 'flower.jpg'),
-(14, 25, '作品名稱', '\r\n作品名稱 \r\n作品名稱\r\n作品介紹(200以下)', '\r\n作品名稱 \r\n作品名稱\r\n作品介紹(200以下) \r\n\r\n作品名稱', 'student.jpg'),
 (15, 25, '下雨', '這個周末安排活動時要注意氣溫變化！中央氣象局表示，東北風從明(28)日開始增強，北部、東半部水氣增加，天氣偏溼涼；到了週五晚間至週六清晨轉為乾冷，預估週六清晨最冷，台南以北及東半部地區，低溫約攝氏18至21度。', '台南以北及東半部地區，低溫約攝氏18至21度。', '02-rainbow-facts-exist-at-night.jpg'),
 (16, 32, 'people', 'Sketch People Vector  - 30,490 royalty free vector graphics and clipart matching Sketch People', 'Sketch People Vector  ', 'people2.jpg'),
 (17, 32, '劉以豪', '《比悲傷更悲傷的故事》（英語：More Than Blue）是一部2018年臺灣愛情電影，翻拍自2009年南韓電影《最悲傷的故事》[2]，導演為林孝謙，並以擅長詩意光影的香港攝影師關本良擔任攝影指導。2018年1月4日開鏡。由劉以豪、陳意涵、張書豪、陳庭妮領銜主演[3]，2018年11月30日港、臺同步上映[4]，2019年3月14日澳洲上映[5]。本劇入選第23屆', '比悲傷更悲傷的故事', 'more than blue.jpg'),
@@ -321,43 +336,43 @@ ALTER TABLE `works`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `carticket`
 --
 ALTER TABLE `carticket`
-  MODIFY `ctid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `ctid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `mem`
 --
 ALTER TABLE `mem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `message`
 --
 ALTER TABLE `message`
-  MODIFY `messageid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `messageid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `ticketorder`
 --
 ALTER TABLE `ticketorder`
-  MODIFY `toid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `toid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `ticketorderlist`
 --
 ALTER TABLE `ticketorderlist`
-  MODIFY `tolid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `tolid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `works`
 --
 ALTER TABLE `works`
-  MODIFY `wid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `wid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
