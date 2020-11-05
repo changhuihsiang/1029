@@ -91,10 +91,10 @@ if ($user_type==NULL) {
         <label for="exampleInputPassword1">密碼</label>
         <input type="password" class="form-control" id="exampleInputPassword1" name="pass">
       </div>
-      <div class="form-group form-check">
+      <!-- <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
+      </div> -->
       <P align="center"><button type="submit" class="btn btn-dark" >登入</button></P>
       <P align="center"><a href="page005-1.php"  class="btn btn-link">尚未註冊?</a></P>
       <?php
