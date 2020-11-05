@@ -3,8 +3,13 @@
   //先從Session中取出user_type
   //以備後續確認瀏覽者的身份別
   $user_type = $_SESSION["user_type"];
-
-
+  $lovemem = 0;
+  $lovemem=$_GET["lovemem"];
+  if ($lovemem==1){
+    ?>
+  <script>alert('請登入會員');</script>
+<?php
+  }
 
 ?>
 
@@ -77,6 +82,7 @@
 
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
+      
         while($row = $result->fetch_assoc()) {
            $wid = $row["wid"]; 
            $mid = $row["mid"];
@@ -84,18 +90,42 @@
            $wintroduction = $row["wintroduction"];
            $wshort = $row["wshort"];
            $wlink = $row["wlink"];
+           $lovework = 0;
+           $lovenum = 0;
+           //算愛心
+           $sqll = "SELECT * FROM lovework WHERE wid='$wid'";
+           $ress = $conn->query($sqll);
+           if ($ress->num_rows > 0) {
+             while($row = $ress->fetch_assoc()) {
+               $lovework = $row["lovework"];
+               if($lovework==1){
+                $lovenum=$lovenum+1;
+                $lovework=0;
+              }
+             }
+           }
+          //找愛心
+           $sqll = "SELECT * FROM lovework WHERE mid='$user_type'and wid='$wid'";
+           $ress = $conn->query($sqll);
+           if ($ress->num_rows > 0) {
+             while($row = $ress->fetch_assoc()) {
+               $lovework = $row["lovework"];
+             }
+           }
+          if($lovework==0){
+            $lovework=2;
+          }
 
 
+          //找作者
           $sql = "SELECT * FROM mem WHERE id='$mid'";
           $res = $conn->query($sql);
           if ($res->num_rows > 0) {
               while($row = $res->fetch_assoc()) {
                 $mwname = $row["name"];
-              
-           
   ?>
         <div class='col-md-4 col-sm-6 col-xs-12'style="width: 20rem">
-          <div class="card" style="width: 20rem;height: 27rem;" align="center">
+          <div class="card" style="width: 20rem;height: 30rem;" align="center">
                 <table width="70%" align="center">
                   <tr><td  align="center">
                 <?php
@@ -105,11 +135,33 @@
               </td></tr>
             </table>
             <div class="card-body" style="width: 20rem" align="left">
-                <h5 class="card-title">作品名稱l<?php echo "$wname"; ?></h5>
+                <h5 class="card-title">
+                <?php if($lovework==2){;?>
+                    
+                    <?php echo "<a href='loveworks.php?wid=$wid&lovework=$lovework' style='color:#000000;'>";  ?>
+                    <p>
+                      <img src='pc/love2.png' onmouseover='this.src="pc/love1.png";' onmouseout='this.src="pc/love2.png";'>
+                       <?php echo "</a>";?>
+                      <?php echo "$lovenum"; ?>
+                    </p>
+                      
+                  <?php } elseif($lovework==1){ ?> 
+                    <?php echo "<a href='loveworks.php?wid=$wid&lovework=$lovework' style='color:#000000;'>";  ?>
+                    <p>
+                      <img src='pc/love1.png' onmouseover='this.src="pc/love2.png";' onmouseout='this.src="pc/love1.png";'>
+                      <?php echo "$lovenum"; ?>
+                    </p>
+                      <?php echo "</a>";?>
+
+                  <?php } ?> 
+                
+                  作品名稱l<?php echo "$wname"; ?>
+                
+                </h5>
                 <p class="card-text"><?php echo "$wshort"; ?></p>
                 <p class="card-text">創作者－<?php echo "$mwname"; ?></p>
                 <p align="right">
-                  <?php echo "<a href='works.php?wid=$wid' class='btn btn-danger'>欣賞</a>";?>
+                  <?php echo "<a href='works.php?wid=$wid' class='btn btn-dark'>欣賞</a>";?>
                 </p>
               </div>
           </div>
