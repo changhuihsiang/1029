@@ -52,6 +52,41 @@ INSERT INTO `carticket` (`ctid`, `mid`, `species`, `num`) VALUES
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `lovework`
+--
+
+CREATE TABLE `lovework` (
+  `lid` int(11) NOT NULL,
+  `mid` varchar(200) NOT NULL,
+  `wid` varchar(200) NOT NULL,
+  `lovework` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- 傾印資料表的資料 `lovework`
+--
+
+INSERT INTO `lovework` (`lid`, `mid`, `wid`, `lovework`) VALUES
+(1, '25', '4', '1'),
+(2, '25', '10', '1'),
+(3, '25', '4', '2'),
+(4, '25', '16', '1'),
+(5, '25', '18', '1'),
+(6, '24', '12', '1'),
+(7, '24', '16', '2'),
+(8, '24', '3', '1'),
+(9, '24', '4', '1'),
+(10, '24', '10', '2'),
+(11, '24', '10', '1'),
+(12, '24', '15', '1'),
+(13, '26', '3', '1'),
+(14, '26', '10', '1'),
+(15, '26', '11', '1'),
+(16, '26', '18', '1');
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `mem`
 --
 
@@ -293,6 +328,12 @@ ALTER TABLE `carticket`
   ADD PRIMARY KEY (`ctid`);
 
 --
+-- 資料表索引 `lovework`
+--
+ALTER TABLE `lovework`
+  ADD PRIMARY KEY (`lid`);
+
+--
 -- 資料表索引 `mem`
 --
 ALTER TABLE `mem`
@@ -337,6 +378,12 @@ ALTER TABLE `works`
 --
 ALTER TABLE `carticket`
   MODIFY `ctid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `lovework`
+--
+ALTER TABLE `lovework`
+  MODIFY `lid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `mem`
