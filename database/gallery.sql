@@ -82,7 +82,13 @@ INSERT INTO `lovework` (`lid`, `mid`, `wid`, `lovework`) VALUES
 (13, '26', '3', '1'),
 (14, '26', '10', '1'),
 (15, '26', '11', '1'),
-(16, '26', '18', '1');
+(16, '26', '18', '1'),
+(17, '42', '3', '1'),
+(18, '42', '4', '1'),
+(19, '42', '10', '1'),
+(20, '42', '12', '1'),
+(21, '42', '11', '1'),
+(22, '42', '22', '1');
 
 -- --------------------------------------------------------
 
@@ -115,7 +121,12 @@ INSERT INTO `mem` (`id`, `name`, `username`, `password`, `birth`, `phone`) VALUE
 (31, '郭小小', 'accc123456dk@gmail.com', '789456', '2020-10-13', '0978456123'),
 (32, '測試先生', 'aaa@gmail.com', 'aaa', '2020-10-28', '098877554'),
 (33, '張鏸香', 'u0545008@gmail.com', '00000', '1997-09-20', '0986025718'),
-(34, '管理者', 'management@gmail.com', 'management', '2020-11-25', '0000000000');
+(34, '管理者', 'management@gmail.com', 'management', '2020-11-25', '0800-000-000'),
+(38, '張鏸香', '1115@gmail.com', '1115', '2020-11-01', '1115'),
+(39, '五月天專輯', '1116@mail.com', '1116', '2020-11-05', '1116'),
+(40, '胖子', '1234678@gmail.com', '12345678', '2020-11-04', '0912345678'),
+(41, '五月天專輯', 'a@gmail.com', 'a', '2020-11-04', 'a'),
+(42, '小七', '777@mail.com', '777', '2020-11-07', '777');
 
 -- --------------------------------------------------------
 
@@ -162,7 +173,9 @@ INSERT INTO `message` (`messageid`, `mid`, `wid`, `message`) VALUES
 (34, '32', '18', '娃好特別的LOGO'),
 (35, '32', '20', '那現在還在徵人嗎?'),
 (37, '25', '4', '123123'),
-(38, '25', '4', '123123');
+(38, '25', '4', '123123'),
+(40, '42', '11', '人物雕畫得很仔細'),
+(42, '42', '22', '文藝復興時代歐洲美術風格');
 
 -- --------------------------------------------------------
 
@@ -196,7 +209,8 @@ INSERT INTO `reservation` (`rid`, `mid`, `name`, `phone`, `datet`, `timet`, `peo
 (18, '26', '張小姐', '0912345789', '2020-10-15', '下午14:00', '10-20人', '2', '789'),
 (19, '32', '測試先生', '0988775777', '2020-11-06', '下午14:00', '5-10人', '1', ''),
 (20, '32', '測試先生', '0923654875', '2020-11-20', '下午14:00', '10-20人', '2', '一二三四五六'),
-(23, '25', '陳先生', '0921345816', '2020-11-28', '下午14:00', '10-20人', '1', '');
+(23, '25', '陳先生', '0921345816', '2020-11-28', '下午14:00', '10-20人', '1', ''),
+(24, '42', '小七', '777', '2020-11-18', '下午14:00', '5-10人', '1', '');
 
 -- --------------------------------------------------------
 
@@ -220,8 +234,8 @@ CREATE TABLE `ticketorder` (
 INSERT INTO `ticketorder` (`toid`, `mid`, `payment`, `gettickets`, `sum`, `tostatus`) VALUES
 (5, '25', '1', '1', '2140', '3'),
 (6, '25', '2', '2', '400', '3'),
-(7, '25', '3', '2', '840', '1'),
-(8, '26', '1', '1', '2070', '2'),
+(7, '25', '3', '2', '840', '3'),
+(8, '26', '1', '1', '2070', '3'),
 (9, '26', '3', '3', '940', '3'),
 (10, '26', '2', '2', '1540', '2'),
 (11, '26', '3', '2', '220', '1'),
@@ -229,13 +243,14 @@ INSERT INTO `ticketorder` (`toid`, `mid`, `payment`, `gettickets`, `sum`, `tosta
 (13, '33', '2', '3', '760', '2'),
 (14, '33', '3', '2', '660', '1'),
 (15, '32', '3', '1', '3470', '2'),
-(16, '32', '2', '1', '220', '3'),
-(17, '33', '3', '2', '660', '3'),
-(18, '33', '3', '2', '660', '3'),
-(19, '32', '1', '1', '880', '1'),
-(20, '32', '2', '3', '900', '1'),
+(16, '32', '2', '1', '220', '2'),
+(17, '33', '3', '2', '660', '2'),
+(18, '33', '3', '2', '660', '1'),
+(19, '32', '1', '1', '880', '2'),
+(20, '32', '2', '3', '900', '2'),
 (21, '32', '2', '2', '2060', '1'),
-(22, '36', '3', '2', '1350', '1');
+(22, '36', '3', '2', '1350', '1'),
+(23, '42', '3', '2', '670', '1');
 
 -- --------------------------------------------------------
 
@@ -283,7 +298,9 @@ INSERT INTO `ticketorderlist` (`tolid`, `toid`, `species`, `num`) VALUES
 (35, '19', '220', '4'),
 (36, '20', '150', '6'),
 (37, '21', '220', '2'),
-(38, '21', '180', '9');
+(38, '21', '180', '9'),
+(44, '23', '220', '1'),
+(45, '23', '150', '3');
 
 -- --------------------------------------------------------
 
@@ -315,7 +332,8 @@ INSERT INTO `works` (`wid`, `mid`, `wname`, `wintroduction`, `wshort`, `wlink`) 
 (16, 32, 'people', 'Sketch People Vector  - 30,490 royalty free vector graphics and clipart matching Sketch People', 'Sketch People Vector  ', 'people2.jpg'),
 (17, 32, '劉以豪', '《比悲傷更悲傷的故事》（英語：More Than Blue）是一部2018年臺灣愛情電影，翻拍自2009年南韓電影《最悲傷的故事》[2]，導演為林孝謙，並以擅長詩意光影的香港攝影師關本良擔任攝影指導。2018年1月4日開鏡。由劉以豪、陳意涵、張書豪、陳庭妮領銜主演[3]，2018年11月30日港、臺同步上映[4]，2019年3月14日澳洲上映[5]。本劇入選第23屆', '比悲傷更悲傷的故事', 'more than blue.jpg'),
 (18, 33, '美術館LOGO', '用於上課網站著LOGO設計，以英文字母TR為出發點，讓字母產生生命感，彷彿活生生的，舞動自我。', '用於上課網站著LOGO設計', 'LOGO.png'),
-(20, 33, '陳麻飯', '陳麻飯陳老闆要求製作徵人海報2019/3-2019/6', '徵人海報', '陳麻飯.jpg');
+(20, 33, '陳麻飯', '陳麻飯陳老闆要求製作徵人海報2019/3-2019/6', '徵人海報', '陳麻飯.jpg'),
+(22, 42, '文藝復興', '是文藝復興時代歐洲美術風格的統稱。是整個文藝復興運動的一部分，大致發展階段是在14世紀興起，15世紀全面展開，16世紀達到了鼎盛期[1]。17世紀後，歐洲美術風格漸漸轉向矯飾主義。', '是文藝復興時代歐洲美術風格的統稱。是整個文藝復興運動的一部分', '文藝.jpg');
 
 --
 -- 已傾印資料表的索引
@@ -377,31 +395,31 @@ ALTER TABLE `works`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `carticket`
 --
 ALTER TABLE `carticket`
-  MODIFY `ctid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `ctid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `lovework`
 --
 ALTER TABLE `lovework`
-  MODIFY `lid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `lid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `mem`
 --
 ALTER TABLE `mem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `message`
 --
 ALTER TABLE `message`
-  MODIFY `messageid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `messageid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `ticketorder`
@@ -413,13 +431,13 @@ ALTER TABLE `ticketorder`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `ticketorderlist`
 --
 ALTER TABLE `ticketorderlist`
-  MODIFY `tolid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `tolid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `works`
 --
 ALTER TABLE `works`
-  MODIFY `wid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `wid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
