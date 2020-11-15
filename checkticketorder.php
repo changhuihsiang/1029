@@ -50,18 +50,18 @@ session_start();
             }
             echo "                </td>";
             echo "                <td>$sum</td>";
-            echo "                <td><a href='looktitcketorderlist.php?toid=$toid' style='color:#000000;'>查閱</a></td>";
+           
             echo "                <td>";
-
             if($tostatus==1){
-                echo "尚未繳款";
+                echo "<font color='#000000'>尚未繳款</font>";
             } elseif ($tostatus==2) {
-                echo"訂單處理中";
+                echo"<font color='#000000'>訂單處理中</font>";
             } elseif ($tostatus==3) {
-                echo"已收單";
+                echo"<font color='#000000'>已收單</font>";
             }
-
             echo "</td>";
+            echo "                <td><a href='looktitcketorderlist.php?toid=$toid' style='color:#000000;'class='btn btn-outline-dark'>查閱</a></td>";
+
             echo "                <td><a href='deletetitcketorder.php?toid=$toid'> <button type='button' class='btn btn-outline-danger'>X</button></a></td>";
             echo "            </tr>";
         }

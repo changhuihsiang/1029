@@ -15,7 +15,11 @@
 
   if ($user_type !=NULL){
     header("Location: page005-2.php");
-    } elseif ($lost==2) {
+    }  elseif ($lost==1) {
+      ?>
+      <script>alert('名稱不可為白');</script>
+  <?php
+    }elseif ($lost==2) {
       ?>
       <script>alert('帳號不可為白');</script>
   <?php

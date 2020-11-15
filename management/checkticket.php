@@ -15,6 +15,7 @@ session_start();
             echo "                <th scope='col'>編號</th>";
             echo "                <th scope='col'>購票者</th>";
             echo "                <th scope='col'>付款方式</th>";
+            echo "                <th scope='col'>購票狀態</th>";
             echo "                <th scope='col'>取票方式</th>";
             echo "                <th scope='col'>總金額</th>";
 			echo "                <th scope='col'>查看明細</th>";
@@ -44,14 +45,18 @@ session_start();
 	                $payments ="信用卡付款";
 	            } elseif ($payment==4) {
 	                $payments = "超商代碼付款";
-	            }
+                }
+                
             	if ($gettickets==1){
                 	$getticket ="現場代碼取票";
 	            } elseif ($gettickets==2) {
 	                $getticket = "超商代碼取票";
 	            } elseif ($gettickets==3) {
 	                $getticket ="手機電子票";
-	            } 
+                } 
+                
+                
+
             if ($remarks==NULL){
                 $remarks="無";
             }
@@ -60,6 +65,17 @@ session_start();
             echo "                <td>$name</td>";
             echo "                <td>$payments</td>";
             echo "                <td>$getticket</td>";
+            echo "                <td>";
+            if($tostatus==1){
+                   echo  "<font color='#FF0000'>尚未繳款</font>";
+                  } elseif($tostatus==2){
+                    echo "<font color='blue'>訂單處理中</font>";
+                  } elseif($tostatus==3){
+                    echo "已收單";
+                  }
+            
+            
+            echo "                </td>";
             echo "                <td>$sum</td>";
             echo "                <td><a href='lookticketorderlist.php?toid=$toid&tostatus=$tostatus'> <button type='button' class='btn btn-outline-dark'>查看</button></a></td>";
             echo "                <td><a href='deleteticketorder.php?toid=$toid'> <button type='button' class='btn btn-outline-danger'>X</button></a></td>";

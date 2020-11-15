@@ -25,7 +25,7 @@ if ($name==NULL) {
 } elseif($passs!=$pass){
     echo "密碼確認錯誤";
     header("Location: page005-1.php?lost=6&name=$name&userid=$userid&pass=$pass&passs=$passs&birth=$birth&phone=$phone");
-}
+}  else{
 
 
 
@@ -57,16 +57,12 @@ if ($name==NULL) {
                     echo "已有人使用該照號";
                     header("Location: page005-1.php?lost=7&name=$name&userid=$userid&pass=$pass&passs=$passs&birth=$birth&phone=$phone");
                 }
-                
-                
-
             }
-
         } else {
             $sqll = "INSERT INTO mem( name, username, password, birth, phone) VALUES ('$name','$userid','$pass','$birth','$phone')";
                 if ($conn->query($sqll) === TRUE) {
-                    echo "成功";
                     header("Location: page005.php?userid=$userid");
+
                   } else {
                     echo "Error: " . $sqll . "<br>" . $conn->error;
                   }
@@ -77,7 +73,7 @@ $conn->close();
 
 
 
-
+    }
     // $sql = "INSERT INTO mem( name, username, password, birth, phone) VALUES ('$name','$userid','$pass','$birth','$phone')";
     // if ($conn->query($sql) === TRUE) {
     //     echo "成功";

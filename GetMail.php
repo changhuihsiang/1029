@@ -1,7 +1,7 @@
 <?php
     session_start();
     $userid = $_POST["userid"];
-    echo "$userid";
+ 
 
 
     $servername = "localhost";
@@ -25,8 +25,10 @@
             $id = $row["id"];  
             $name = $row["name"];
             $passchk = $row["password"];
-
-            echo "$passchk";
+			echo "帳號是：$userid";
+			echo "<br>密碼是：$passchk";
+			echo "<hr>請洽管理者0800-000-000";
+			echo "<br><a href='page005-3.php'><button type='submit' class='btn btn-dark'>BACK</button></a>";
             }
     } else{
         echo "查無此帳號";

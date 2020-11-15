@@ -51,9 +51,9 @@ session_start();
              if ($restatus==1){
                 echo "等候中";
             } elseif ($restatus==2) {
-                echo "成功預約";
+                echo "預約成功";
             } elseif ($restatus==3) {
-                echo "失敗預約";
+                echo "預約失敗";
             }
             echo "                </td>";
             echo "                <td><a href='lookreservation.php?rid=$rid'> <button type='button' class='btn btn-outline-dark'>查看</button></a></td>";

@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top alert alert-secondary"  style="height: 4rem;">
-    <h4><img src="../pc/LOGOsmall.png"><a href="index.php" style="color:black;"> TR ART MUSEUM</a></h4>
+    <h4><img src="../pc/LOGOsmall.png"><a href="../index.php" style="color:black;"> TR ART MUSEUM</a></h4>
     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
       <h4>
          <a href="../management/page001.php"><button type="button" class="btn btn-light">管理資訊</button></a>

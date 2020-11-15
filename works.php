@@ -224,8 +224,13 @@
           </table>
         </td>
       </tr>
-  <?php } ?>
-
+  <?php } else{ 
+    echo "<tr align='center'><td>
+    <br>
+    <a href='page005.php'>
+      <button type='button' class='btn btn-light'>登入即可留言</button>
+    </a>
+    </td></tr>";} ?>
 
 
 </table>

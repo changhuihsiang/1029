@@ -36,31 +36,7 @@
    <?php require "includes/exhibition.php";?>
     <br>
   <br>
-
-  <div class="alert alert-success" role="alert">
-      <tr><td><h3><img src="pc/Sign2.png">近期展覽</h3></td></tr>
-    <hr>
-    <h5>「蛻變與新生」工程接近完工，入館動線更改。</h5>
-    <h5>9月5日起進入美術館及廣場請改道，由美術館路停車場進入。</h5>
-  </div>
-  
-<table width=70% align="center">
-      <tr>
-        <td>A</td>
-        <td>《黑盒－幻魅於形》</td>
-        <td><button type="button" class="btn btn-outline-success">前往欣賞</button></td>
-      </tr>
-      <tr>
-        <td>B</td>
-        <td>材料「長」這樣，藝術「展」</td>
-        <td><button type="button" class="btn btn-outline-danger">前往欣賞</button></td>
-      </tr>
-      <tr>
-        <td>C</td>
-        <td>凝視與穿越：藝術典藏中的高雄百景</td>
-        <td><button type="button" class="btn btn-outline-warning">前往欣賞</button></td>
-      </tr>
-    </table>
+<?php require "includes/excom.php";?>
 
 <?php require "includes/footer.php";?>
 

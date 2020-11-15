@@ -129,7 +129,7 @@
                 <table width="70%" align="center">
                   <tr><td  align="center">
                 <?php
-                    $tags="<img src='uploads/^^^^'class='card-img-top;' style='height: 12rem;' >"; 
+                    $tags="<img src='uploads/^^^^'class='card-img-top;' style='height: 12rem;width: 17rem;' >"; 
                     echo str_replace("^^^^",$wlink,$tags);
                 ?>
               </td></tr>
@@ -138,7 +138,7 @@
                 <h5 class="card-title">
                 <?php if($lovework==2){;?>
                     
-                    <?php echo "<a href='loveworks.php?wid=$wid&lovework=$lovework' style='color:#000000;'>";  ?>
+                    <?php echo "<a href='loveworks.php?wid=$wid&lovework=$lovework' style='color:#000000;text-decoration:none;'>";  ?>
                     <p>
                       <img src='pc/love2.png' onmouseover='this.src="pc/love1.png";' onmouseout='this.src="pc/love2.png";'>
                        <?php echo "</a>";?>
@@ -146,7 +146,7 @@
                     </p>
                       
                   <?php } elseif($lovework==1){ ?> 
-                    <?php echo "<a href='loveworks.php?wid=$wid&lovework=$lovework' style='color:#000000;'>";  ?>
+                    <?php echo "<a href='loveworks.php?wid=$wid&lovework=$lovework' style='color:#000000;text-decoration:none;'>";  ?>
                     <p>
                       <img src='pc/love1.png' onmouseover='this.src="pc/love2.png";' onmouseout='this.src="pc/love1.png";'>
                       <?php echo "$lovenum"; ?>

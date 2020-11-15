@@ -108,7 +108,7 @@
               <?php echo "<input type='text' class='form-control' name='phone' value='$phone'>";?>
               <br>
               <label style="font-size:20px;">*預約日期</label>
-              <input type="date" name="date" class='form-control'>
+              <input type="date" name="date" class='form-control' value="2020-11-18">
               <br>
               <label style="font-size:20px;">*預約時間</label>
               <br>

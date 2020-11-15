@@ -40,9 +40,9 @@ session_start();
              if ($restatus==1){
                 echo "<font color='red'><b>等候中</font>";
             } elseif ($restatus==2) {
-                echo "<font color='blue'>成功預約</font>";
+                echo "<font color='blue'>預約成功</font>";
             } elseif ($restatus==3) {
-                echo "失敗預約";
+                echo "預約失敗";
             }
             echo "                </td>";
             echo "                <td><a href='lookreservation.php?rid=$rid'> <button type='button' class='btn btn-outline-dark'>查看</button></a></td>";

@@ -32,8 +32,30 @@
     ?>
     <script>alert('帳號錯誤');</script>
 <?php
+  } elseif ($userid!=NULL) {
+    
+    require "includes/db.php";
+    $si = "SELECT * FROM mem WHERE username='$userid'";
+    $ri = $conn->query($si);
+      if ($ri->num_rows > 0) {
+          while($row = $ri->fetch_assoc()) {
+              $id = $row["id"];  
+              $_SESSION["user_type"] = $id;
+              header("Location: page005-2.php");
+          }
+      }
   } 
 ?>
+?>
+
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
